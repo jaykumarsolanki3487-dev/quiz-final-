@@ -1,0 +1,333 @@
+for military theme and questions  in quiz  CODE:-
+**********************************-------------------------------------------------------------------------*********************************************************************
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tactical Trivia | Military Quiz Challenge</title>
+    <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <style>
+        .military-bg {
+            background-image: url('http://static.photos/military/1200x630/42');
+            background-size: cover;
+            background-position: center;
+            background-blend-mode: overlay;
+        }
+        .camo-border {
+            border-image: linear-gradient(45deg, #2d3748, #4a5568, #2d3748) 1;
+        }
+        .bullet-point::before {
+            content: "•";
+            color: #68d391;
+            font-weight: bold;
+            display: inline-block; 
+            width: 1em;
+            margin-left: -1em;
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-gray-100 min-h-screen">
+    <!-- Vanta.js Military Background -->
+    <div id="vanta-bg" class="fixed top-0 left-0 w-full h-full -z-10"></div>
+    
+    <!-- Navigation -->
+    <nav class="bg-gray-800 bg-opacity-90 border-b border-green-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0">
+                        <i data-feather="shield" class="text-green-500"></i>
+                    </div>
+                    <div class="hidden md:block">
+                        <div class="ml-10 flex items-baseline space-x-4">
+                            <a href="#" class="bg-green-900 text-white px-3 py-2 rounded-md text-sm font-medium">Home</a>
+                            <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Quizzes</a>
+                            <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Leaderboard</a>
+                            <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">About</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-4 flex items-center md:ml-6">
+                        <button class="bg-green-800 hover:bg-green-700 text-white px-4 py-2 rounded-md text-sm font-medium flex items-center">
+                            <i data-feather="log-in" class="mr-2"></i> Sign In
+                        </button>
+                    </div>
+                </div>
+                <div class="-mr-2 flex md:hidden">
+                    <button type="button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none">
+                        <i data-feather="menu"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <main class="mt-10 mx-auto max-w-7xl px-4 sm:mt-12 sm:px-6 lg:mt-16 lg:px-8">
+        <div class="sm:text-center lg:text-left">
+            <h1 class="text-4xl tracking-tight font-extrabold text-white sm:text-5xl md:text-6xl" data-aos="fade-down">
+                <span class="block">Test Your</span>
+                <span class="block text-green-500">Military Knowledge</span>
+            </h1>
+            <p class="mt-3 text-base text-gray-300 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0" data-aos="fade-up">
+                Engage in tactical quizzes covering history, weapons, strategies and special operations from around the world.
+            </p>
+            <div class="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start" data-aos="zoom-in">
+                <div class="rounded-md shadow">
+                    <a href="#" class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-green-600 hover:bg-green-700 md:py-4 md:text-lg md:px-10">
+                        Start Quiz <i data-feather="arrow-right" class="ml-2"></i>
+                    </a>
+                </div>
+                <div class="mt-3 sm:mt-0 sm:ml-3">
+                    <a href="#" class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-green-300 bg-gray-800 hover:bg-gray-700 md:py-4 md:text-lg md:px-10">
+                        <i data-feather="award" class="mr-2"></i> Leaderboard
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Featured Quizzes -->
+    <section class="py-12 bg-gray-800 bg-opacity-70 mt-16 rounded-lg border border-green-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="lg:text-center">
+                <h2 class="text-base text-green-400 font-semibold tracking-wide uppercase">Featured Challenges</h2>
+                <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-white sm:text-4xl">
+                    Special Operations Quizzes
+                </p>
+            </div>
+
+            <div class="mt-10">
+                <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+                    <!-- Quiz Card 1 -->
+                    <div class="pt-6" data-aos="fade-up">
+                        <div class="flow-root bg-gray-900 rounded-lg px-6 pb-8 border border-green-800 h-full">
+                            <div class="-mt-6">
+                                <div class="flex items-center justify-center h-12 w-12 rounded-md bg-green-800 text-white mx-auto">
+                                    <i data-feather="target"></i>
+                                </div>
+                                <h3 class="mt-8 text-lg font-medium text-white text-center">Weapons Mastery</h3>
+                                <p class="mt-5 text-base text-gray-300">
+                                    Identify firearms, artillery, and military equipment from different eras and nations.
+                                </p>
+                                <div class="mt-6">
+                                    <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-green-900 text-green-100">
+                                        25 Questions
+                                    </span>
+                                    <span class="ml-2 inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-gray-700 text-gray-300">
+                                        <i data-feather="clock" class="mr-1 w-4 h-4"></i> 10 min
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Quiz Card 2 -->
+                    <div class="pt-6" data-aos="fade-up" data-aos-delay="100">
+                        <div class="flow-root bg-gray-900 rounded-lg px-6 pb-8 border border-green-800 h-full">
+                            <div class="-mt-6">
+                                <div class="flex items-center justify-center h-12 w-12 rounded-md bg-green-800 text-white mx-auto">
+                                    <i data-feather="map"></i>
+                                </div>
+                                <h3 class="mt-8 text-lg font-medium text-white text-center">Battlefield Tactics</h3>
+                                <p class="mt-5 text-base text-gray-300">
+                                    Test your knowledge of famous battles, military strategies and historical campaigns.
+                                </p>
+                                <div class="mt-6">
+                                    <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-green-900 text-green-100">
+                                        20 Questions
+                                    </span>
+                                    <span class="ml-2 inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-gray-700 text-gray-300">
+                                        <i data-feather="clock" class="mr-1 w-4 h-4"></i> 8 min
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Quiz Card 3 -->
+                    <div class="pt-6" data-aos="fade-up" data-aos-delay="200">
+                        <div class="flow-root bg-gray-900 rounded-lg px-6 pb-8 border border-green-800 h-full">
+                            <div class="-mt-6">
+                                <div class="flex items-center justify-center h-12 w-12 rounded-md bg-green-800 text-white mx-auto">
+                                    <i data-feather="users"></i>
+                                </div>
+                                <h3 class="mt-8 text-lg font-medium text-white text-center">Special Forces</h3>
+                                <p class="mt-5 text-base text-gray-300">
+                                    Elite units quiz covering Navy SEALs, SAS, Spetsnaz and other special operations forces.
+                                </p>
+                                <div class="mt-6">
+                                    <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-green-900 text-green-100">
+                                        15 Questions
+                                    </span>
+                                    <span class="ml-2 inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-gray-700 text-gray-300">
+                                        <i data-feather="clock" class="mr-1 w-4 h-4"></i> 6 min
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="mt-16 mb-16">
+        <div class="bg-gray-800 bg-opacity-70 rounded-lg border border-green-800">
+            <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8 lg:flex lg:items-center lg:justify-between">
+                <h2 class="text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
+                    <span class="block">Ready to test your tactical knowledge?</span>
+                    <span class="block text-green-500">Create an account to track your progress.</span>
+                </h2>
+                <div class="mt-8 flex lg:mt-0 lg:flex-shrink-0" data-aos="zoom-in">
+                    <div class="inline-flex rounded-md shadow">
+                        <a href="#" class="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-green-600 hover:bg-green-700">
+                            Sign Up <i data-feather="user-plus" class="ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 bg-opacity-90 border-t border-green-800">
+        <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8">
+            <div class="xl:grid xl:grid-cols-3 xl:gap-8">
+                <div class="space-y-8 xl:col-span-1">
+                    <div class="flex items-center">
+                        <i data-feather="shield" class="text-green-500 h-10 w-10"></i>
+                        <span class="ml-2 text-white text-xl font-bold">Tactical Trivia</span>
+                    </div>
+                    <p class="text-gray-300 text-base">
+                        The premier destination for military enthusiasts to test their knowledge and compete.
+                    </p>
+                    <div class="flex space-x-6">
+                        <a href="#" class="text-gray-400 hover:text-green-400">
+                            <i data-feather="twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-green-400">
+                            <i data-feather="facebook"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-green-400">
+                            <i data-feather="instagram"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="mt-12 grid grid-cols-2 gap-8 xl:mt-0 xl:col-span-2">
+                    <div class="md:grid md:grid-cols-2 md:gap-8">
+                        <div>
+                            <h3 class="text-sm font-semibold text-green-400 tracking-wider uppercase">Quizzes</h3>
+                            <ul class="mt-4 space-y-4">
+                                <li>
+                                    <a href="#" class="text-base text-gray-300 hover:text-white">Historical</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="text-base text-gray-300 hover:text-white">Modern Warfare</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="text-base text-gray-300 hover:text-white">Special Forces</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="text-base text-gray-300 hover:text-white">Weapons</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="mt-12 md:mt-0">
+                            <h3 class="text-sm font-semibold text-green-400 tracking-wider uppercase">Resources</h3>
+                            <ul class="mt-4 space-y-4">
+                                <li>
+                                    <a href="#" class="text-base text-gray-300 hover:text-white">Military History</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="text-base text-gray-300 hover:text-white">Tactical Guides</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="text-base text-gray-300 hover:text-white">Equipment Database</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="text-base text-gray-300 hover:text-white">Veteran Stories</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="md:grid md:grid-cols-2 md:gap-8">
+                        <div>
+                            <h3 class="text-sm font-semibold text-green-400 tracking-wider uppercase">Company</h3>
+                            <ul class="mt-4 space-y-4">
+                                <li>
+                                    <a href="#" class="text-base text-gray-300 hover:text-white">About</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="text-base text-gray-300 hover:text-white">Contact</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="text-base text-gray-300 hover:text-white">Careers</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="text-base text-gray-300 hover:text-white">Privacy</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="mt-12 md:mt-0">
+                            <h3 class="text-sm font-semibold text-green-400 tracking-wider uppercase">Legal</h3>
+                            <ul class="mt-4 space-y-4">
+                                <li>
+                                    <a href="#" class="text-base text-gray-300 hover:text-white">Terms</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="text-base text-gray-300 hover:text-white">Privacy Policy</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="text-base text-gray-300 hover:text-white">Cookie Policy</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-12 border-t border-gray-700 pt-8">
+                <p class="text-base text-gray-400 text-center">
+                    &copy; 2023 Tactical Trivia. All rights reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.globe.min.js"></script>
+    <script>
+        VANTA.GLOBE({
+            el: "#vanta-bg",
+            mouseControls: true,
+            touchControls: true,
+            gyroControls: false,
+            minHeight: 200.00,
+            minWidth: 200.00,
+            scale: 1.00,
+            scaleMobile: 1.00,
+            color: 0x2f855a,
+            backgroundColor: 0x111827,
+            size: 0.8
+        });
+    </script>
+    <script>
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
+    </script>
+    <script>
+        feather.replace();
+    </script>
+</body>
+</html>

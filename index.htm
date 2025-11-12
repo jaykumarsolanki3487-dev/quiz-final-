@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Tactical Trivia — Home</title>
+    <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-900 text-gray-100 min-h-screen">
+    <header class="max-w-4xl mx-auto p-6 flex items-center justify-between">
+        <div class="flex items-center gap-3">
+            <svg class="h-10 w-10 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 2l2 4 4 .5-3 3 .7 4L12 13l-3.7 1.5.7-4-3-3L10 6 12 2z" />
+            </svg>
+            <h1 class="text-2xl font-bold">Tactical Trivia</h1>
+        </div>
+        <nav class="space-x-4">
+            <a href="index.htm" class="text-gray-300 hover:text-white">Home</a>
+            <a href="quiz.htm" class="text-gray-300 hover:text-white">Take Quiz</a>
+            <a href="#about" class="text-gray-300 hover:text-white">About</a>
+        </nav>
+    </header>
+
+    <main class="max-w-4xl mx-auto p-6">
+        <section class="bg-gray-800 rounded-lg p-8 border border-green-800">
+            <h2 class="text-3xl font-extrabold text-white">Welcome to Tactical Trivia</h2>
+            <p class="mt-3 text-gray-300">Sharpen your military knowledge with themed quizzes covering history, tactics, equipment and elite units.</p>
+            <div class="mt-6 flex gap-4">
+                <a href="quiz.htm" class="inline-flex items-center px-5 py-3 bg-green-600 hover:bg-green-700 text-white rounded-md font-medium">Start Quiz</a>
+                <a href="#preview" class="inline-flex items-center px-5 py-3 bg-gray-700 hover:bg-gray-600 text-gray-100 rounded-md">Preview</a>
+            </div>
+        </section>
+
+        <section id="preview" class="mt-8">
+            <h3 class="text-xl font-semibold text-white">Quick Preview</h3>
+            <p class="text-gray-300 text-sm mt-1">Embedded preview of the quiz page (if your browser blocks iframes from local files, open <a href="quiz.htm" class="text-green-400 underline">quiz.htm</a> directly).</p>
+            <div class="mt-4 border border-gray-700 rounded overflow-hidden" style="height:500px">
+                <iframe src="quiz.htm" title="Quiz Preview" class="w-full h-full bg-black" style="border:0"></iframe>
+            </div>
+        </section>
+
+        <section id="about" class="mt-8 text-gray-300">
+            <h3 class="text-lg font-semibold text-white">About</h3>
+            <p class="mt-2">This small project contains a military-themed quiz interface. Use the Start Quiz button to open the full interactive quiz in <code>quiz.htm</code>.</p>
+        </section>
+    </main>
+
+    <footer class="max-w-4xl mx-auto p-6 text-center text-gray-400 text-sm">
+        &copy; 2025 Tactical Trivia. Open <code>quiz.htm</code> to view the quiz page.
+    </footer>
+</body>
+</html>
